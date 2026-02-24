@@ -56,50 +56,37 @@ fetch("https://dummyjson.com/products")
     data.products.forEach(product=>{
         let card=document.createElement("div")
         card.className="card"
-
         let pimg=document.createElement("img")
         pimg.src=product.thumbnail;
-
         let pname=document.createElement("h3")
         pname.innerText=product.title;
-
         card.appendChild(pimg)
         card.appendChild(pname)
         products.appendChild(card)
-
         let sc=document.getElementById("display")
-
         card.addEventListener("click",()=> {
             sc.innerHTML=""
             sc.style.display="block"
-
             let singlecard = document.createElement("div");
             singlecard.className = "card1";
-
             let pimg=document.createElement("img")
             pimg.src=product.thumbnail;
-
             let pname=document.createElement("h3")
             pname.innerText=product.title;
-
             let singledescription = document.createElement("p");
             singledescription.innerText = product.description;
-
             // singlecard.appendChild(singletitle);
-
             let btn=document.createElement("button")
             btn.innerText="X";
             btn.addEventListener("click",()=>{
                 sc.style.display="none";
                 sc.innerHTML=""
             })
-
-            singlecard.appendChild(btn)
+              singlecard.appendChild(btn)
             singlecard.appendChild(pimg)
             singlecard.appendChild(pname)
             singlecard.appendChild(singledescription)
-
-            // singlecard.appendChild(xbtn)
+             // singlecard.appendChild(xbtn)
             sc.appendChild(singlecard)
         })
     })
